@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Change HTML using Variables </title>  
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    .greenbox{
+        background-color:#38c638;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    .great{
+        background-color: #ee3e3e;
+    }
+         
+</style>
+        
+    </head>
+    
+    <body>
+       <div class="bluebox" id="facebook">
+           <p>Facebook is <span class="great">great</span></p>
+        </div>
+         <div class="yellowbox" id="apple">
+           <p>Apple</p>
+        </div>
+         <div class="greenbox" id="microsoft">
+           <p>Microsoft</p>
+        </div>
+<!-- Button for facebook div -->
+        <button id="button1" onclick="swap('facebook', 'apple')"> Swap content of facebook and apple 
+        </button>
+<!-- Button for Apple div -->
+        <button id="button2" onclick="swap('apple', 'microsoft')"> Swap content of Apple and microsoft
+        </button>
+<!-- Change HTML using color -->
+        <script>
+          function greeting(){
+              window.alert("Hello");
+          }
+         greeting();
+        //window.alert(greeting);  // Display the function Definition in the alert window
+            
+        function greeting2(firstname){
+            window.alert("Hello " + firstname + " !!");
+        }
+        greeting2("John");
+            
+        function sum(a,b){
+            return a+b;
+        }
+        var x=sum(3,7);
+        window.alert(x);
+            
+        function swap(id1, id2){
+            var y = document.getElementById(id1).innerHTML;
+            var z = document.getElementById(id2).innerHTML; 
+            document.getElementById(id2).innerHTML = y;
+            document.getElementById(id1).innerHTML = z;
+        }
+            
+        </script>
+    
+    </body>
+</html>
+        

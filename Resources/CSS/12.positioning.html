@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Positioning</title>
+        
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: 100px;
+        width: 100;
+        position: fixed; /*All elements are placed on pixel position. Default is 0,0 unless specified by the top and left position. */
+        top:30px ;
+        left : 30px;
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: white;
+        height: 80px;
+        width: auto;
+        position: relative; /*Relative to the original position. */
+        top : 20px;
+        left : 20px;
+        z-index: 1; /* to show the element to the front */
+    }
+    .greenbox{
+        background-color:#38c638;
+        color: white;
+        height: 100px;
+        width: auto;
+        position : absolute; /* positioning the elements relative to the first non- static parent. If no non-static element then it is placed relative to the other HTML elements.*/
+        top: 40px;
+        left: 40px;
+        z-index: 2
+    }
+    .great{
+        background-color: #ee3e3e;
+    }
+         
+</style>
+        
+    </head>
+    
+    <body>
+       <div class="bluebox">
+           <p>Facebook is <span class="great">great</span></p>
+        </div>
+         <div class="yellowbox">
+           <p>Apple</p>
+        </div>
+         <div class="greenbox">
+           <p>Microsoft</p>
+        </div>
+    </body>
+</html>

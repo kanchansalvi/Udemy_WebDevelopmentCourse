@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Objects Using New  </title>
+</head>
+    
+<body>
+    <p>Javascript</p>
+    
+<script>
+    
+ function phone(make, model, warranty, color)
+    {
+        this.make = make;
+        this.model = model;
+        this.warranty = warranty;
+        this.color = color;
+        // Creating an object Function
+        this.extendWarranty = function(x){
+            this.warranty = this.warranty + x;
+        }
+    }
+
+//  Creating the object 
+    var myPhone = new phone("Apple", "Iphone 7", 5,"White");
+    window.console.log(myPhone);  //phone {make: "Apple", model: "Iphone 7", warranty: 5, color: "White"}
+    
+    myPhone.extendWarranty(12);
+    window.console.log(myPhone.warranty); //17
+    
+    // To add new property 
+    myPhone.condition = "like new";
+    window.console.log(myPhone);
+    window.console.log(myPhone.condition);
+    
+    var myBrothersPhone1 = new phone();
+    window.console.log(myBrothersPhone1);  //Undefined values
+    
+     var myBrothersPhone = new phone("Apple", "Iphone 4", 4, "Black");
+    window.console.log(myBrothersPhone);
+    window.console.log(myBrothersPhone.condition);
+    // Adding new Property to all objects created by constructor  
+    phone.prototype.condition = "new";
+    window.console.log(myBrothersPhone.condition);
+    window.console.log(myPhone.condition);
+    
+</script>
+</body>
+</html>

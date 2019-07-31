@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Variables and Data Types</title>  
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    .greenbox{
+        background-color:#38c638;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    .great{
+        background-color: #ee3e3e;
+    }
+         
+</style>
+        
+    </head>
+    
+    <body>
+       <div class="bluebox" id="facebook">
+           <p>Facebook is <span class="great">great</span></p>
+        </div>
+         <div class="yellowbox" id="apple">
+           <p>Apple</p>
+        </div>
+         <div class="greenbox">
+           <p>Microsoft</p>
+        </div>
+<!-- Button for facebook div -->
+        <button id="button1"> Change facebook style 
+        </button>
+<!-- Button for Apple div -->
+        <button id="button2"> Change Apple style 
+        </button>
+<!-- Variables and Data Types -->
+        <script>
+            
+            var x=3;
+            window.console.log(x); // 3 
+            var y;
+            y=5;
+            var z;
+            window.console.log("The value of z is " + z);           // undefined 
+            z=x+y;
+            window.console.log("The value of z is" +z);             // 8
+            window.console.log("The typeof of z is" + typeof(z));  // number
+            
+            z=x+" " +y;
+            window.console.log("The value of z is" +z);           // 3  5 
+            
+            var greeting="Hello";
+            var firstname = "John";
+            var message = greeting + " " + firstname;
+            window.console.log("The message is " + message);      // Hello John
+            window.console.log("The type of message is " + typeof(message)); // string
+            
+            var check = (x==3);
+            window.console.log("The value of check is " + check);      // true
+            window.console.log("The value of check is " + typeof(check));  // boolean
+            
+            var myArray = [1,2,3];
+            window.console.log(myArray);                           // [1,2,3]
+            window.console.log(typeof(myArray));                   // Object
+            
+        </script>
+    </body>
+</html>
+        

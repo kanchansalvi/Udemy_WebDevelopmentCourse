@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Arrays</title>
+</head>
+    
+<body>
+    <p id="myParagraph">Javascript</p>
+<script>
+    //var shoppingList = ["bread", "eggs", "milk"];
+    var shoppingList = new Array("bread", "eggs", "milk");
+    
+    // Get elements of Shopping List
+    document.getElementById("myParagraph").innerHTML += "<br />" + shoppingList;
+    // Get specific element of Shopping List
+    document.getElementById("myParagraph").innerHTML += "<br />" + shoppingList[0];
+    
+    // Function to get specific element of Shopping List
+        showResult(shoppingList);
+        showResult(shoppingList[0]);
+        showResult(shoppingList[1]);
+        showResult(shoppingList[2]);
+    function showResult(x){
+        document.getElementById("myParagraph").innerHTML += "<br />" + x;
+    }
+    
+    shoppingList[1] = "Orange";
+    showResult(shoppingList); //bread,Orange,milk 
+    
+    delete shoppingList[1];
+    showResult(shoppingList); //bread,,milk
+    
+    // To delete the item completely
+    shoppingList.splice(1,1);
+     showResult(shoppingList); //bread,milk
+    
+    // Adding item to specific position
+    shoppingList.splice(1,0, "Banana", "Apple");
+     showResult(shoppingList); //bread,Banana,Apple,milk
+    
+    // Sorting Array
+    shoppingList.sort();
+     showResult(shoppingList); //Apple,Banana,bread,milk
+    
+    // Reversing Array
+    shoppingList.reverse();
+     showResult(shoppingList); //milk,bread,Banana,Apple
+    
+    // Working on Strings 
+    var myString = 'A  BCD';
+    var myArray = myString.split('');
+    showResult(myArray);
+    
+    var myString = 'How are you?';
+    var myArray = myString.split(' ', 2);
+    showResult(myArray);
+    
+    
+    
+</script>
+</body>
+</html>

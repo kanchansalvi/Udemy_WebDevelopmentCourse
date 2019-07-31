@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Box Model Borders</title>
+        
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: 100px;
+        width: auto;
+        padding: 16px; /* takes padding 16px on all sides */
+        border: 10px blue ridge;
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: white;
+        height: 100px;
+        width: auto;
+        padding: 16px 25px 10px 20px; /* takes padding values for top right bottom left */ 
+        border-width: 10px 15px 5px 10px;
+        border-color: black green orange red;
+        border-style: solid;
+    }
+    
+/* One way of changing Div to a circle */
+    .greenbox{
+        background-color:#38c638;
+        color: white;
+        height: 100px;
+        width: 100px;
+        padding: 10px; /* takes padding values for top&bottom, right&left */
+        border-width: 10px;
+        border-color:cyan;
+        border-style: ridge;
+        border-radius: 100px;        
+    }
+    .great{
+        background-color: #ee3e3e;
+    }
+         
+</style>
+        
+    </head>
+    
+    <body>
+       <div class="bluebox">
+           <p>Facebook is <span class="great">great</span></p>
+        </div>
+         <div class="yellowbox">
+           <p>Apple</p>
+        </div>
+         <div class="greenbox">
+           <p>Microsoft</p>
+        </div>
+    </body>
+</html>

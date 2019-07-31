@@ -1,0 +1,211 @@
+/* Adding the font property to our page */
+body{
+    font: Arial, Helvetica, sans-serif;
+}
+
+/* Style for the main ontainer. Since we are using ID, it starts with # */
+#container{
+    width: 1200px;
+    border: 1px solid white;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Styling the Links inside the Heading h1 */
+h1 a{
+    font-size: 50px;
+    font-weight: 100;
+    color: #861BBF;
+    text-decoration: none;
+    
+}
+/* Make the searchbox to float to the right */
+/* Add background Color, height and width */
+/* Add padding so that ather elements are in centre */
+#searchBox {
+    float: right;
+    background: linear-gradient(#E4F2B9, #B7E953);
+    width: 350px;
+    height: 60px;
+    padding: 20px 20px 0px 20px;
+    margin-top: 20px;
+}
+
+/* header contains all the elements floating so it gets collapsed. Threfore, assign a height to the header */
+#header{
+    height: 100px;
+    padding: 10px 0px; 
+}
+
+/* Make the brand to float to the right */
+#brand {
+    float: left;
+}
+
+/* Make the text box to float to left */
+/* Add a background Image for the search Icon */
+.text {
+    float: left;
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+    font-size: 15px;
+    color: orange;
+    background: white url(images/searchlogo.png) right no-repeat; 
+    border: 1px solid #d0813e;
+}
+
+/* Make the submit button to float to right */
+/* Add padding, make text bold, text-color as white and background */
+.submit {
+    float: right;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+    background: #A751D6;
+    font-size: 15px;
+}
+
+/* Add property to clear */
+#clear {
+    clear: both;
+}
+
+/* Add some color and height to our Menu list */
+/* Add some padding */
+#menu{
+    height: 70px;
+    background: linear-gradient(#F8F594, #D5D533);
+    padding: 7px 0;
+}
+
+/* To get rid of Bullet points inside the menu, make <ul> to e none */
+ul{
+    list-style: none;
+}
+
+/* To style list inline, */
+/* Add some padding */
+/* Seperate list Item with | */
+#menu ul li{
+    float: left;
+    padding: 0px 30px;
+    height: 20px;
+    border-right: 1px solid #5D12E7;
+}
+
+/* Style the text inside the List Item.ie. styling our links  */
+/* Remove the underline to the links */
+/* Make the text to be uppercase */
+/* set the transition timing function and use ease : speed starts slow and ends slow. */
+#menu ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 17px;
+    color: #5D12E7;
+    line-height: 10px;
+/*   Add transition property for different browsers. */
+    transition: font-size .3s ease; 
+}
+
+/* Last list Item doesn’t have any Border.i.e to remove pipe after the last item: Acces the last list-item of the list */
+#menu ul li:last-child{
+    border-right: none;
+}
+
+/* Add some styling to the links so that they change when we hover on them */
+/* j)	Make our list item to be Active by extend the hover to also work with Active links */
+#menu ul li a:hover, #menu ul li a.active{
+    font-size: 30px;
+    font-weight: bold;
+    color: #B314DB;
+}
+
+/* Add styling to the container like background, color */
+#introduction{
+    background: linear-gradient(#E5F2B8, #B7E952);
+    padding: 30px;
+    margin: 16px 0;
+}
+
+/* Create styles for <h3> in introduction. Font-size, color and font-weight */
+#introduction h3{
+    font-size: 45px;
+    color: #316901;
+    font-weight: normal;
+}
+
+/* styles for <p> in introduction for font-size and color */
+#introduction p{
+    font-size: 25px;
+    color: #629A59;
+    text-align: justify;
+}
+
+/* Styling for the sidebar class */
+/* Add border and Border radius for the sidebar */
+/* Add padding */
+.sidebar{
+    height: 450px;
+    width: 500px;
+    border: 1px solid #BAF66F;
+    border-radius: 20px;
+    padding: 10px 40px;
+}
+
+/* Style the heading inside the Sidebar class */
+.sidebar h3{
+    color: #B314DB;
+    font-size: 30px;
+}
+
+/* Style the links inside the Sidebar class */
+.sidebar ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #BD12E7; 
+    transition: font-size 0.3s ease;
+}
+
+/* Styling when link is active or activated */
+.sidebar ul li a:hover,  .sidebar ul li a.active{
+    text-decoration: none;
+    color: #BD12E7;
+    font-size: 23px;
+    font-weight: bold;
+    
+}
+
+/* Styling for the leftsidebar class to make it to the left */
+#leftsidebar{
+    float: left;
+}
+/* Get some space between heading and list */
+#leftsidebar ul{
+    padding: 8px;
+}
+
+/* Add an Image to the list and adjust the spacing accordingly */
+#leftsidebar ul li{
+    padding: 3px 0px 4px 10px;
+    list-style-image: url(images/arrowlogo.png);
+}
+
+#rightsidebar ul li{
+    padding: 15px 0px 15px 50px;
+    background: url(images/ticklogo.png) no-repeat left center;
+}
+
+/* Styling for the sidebar class */
+#rightsidebar{
+    float: right;
+}
+/* Style the footer */
+/* Error: ths was showing above sidebar. so added display and width */
+.footer{
+    height 100px;
+    background: linear-gradient(#F6F390, #ccc507);
+    margin-top: 15px;
+    width: 1200;
+    display:inline-block;
+}

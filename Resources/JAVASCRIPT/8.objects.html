@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Objects </title>
+</head>
+    
+<body>
+    <p>Javascript</p>
+    
+<script>
+    var myPhone = {
+        
+        make : "Apple",
+        model : "Iphone 7",
+        warranty : 12,
+        color : "white"
+    };
+    window.console.log(myPhone);         // {make: "Apple", model: "Iphone 7", warranty: 12, color: "white"}
+    
+    delete myPhone.warranty;
+    window.console.log(myPhone);        //{make: "Apple", model: "Iphone 7", color: "white"}
+    window.console.log(myPhone.model); //Iphone 7
+    
+    var myOtherPhone = myPhone;
+    window.console.log(myOtherPhone);  // {make: "Apple", model: "Iphone 7", color: "white"}
+    
+    myOtherPhone.model="Iphone 8";
+    window.console.log(myOtherPhone);  //{make: "Apple", model: "Iphone 8", color: "white"}
+    window.console.log(myPhone);       //{make: "Apple", model: "Iphone 8", color: "white"}
+    
+</script>
+</body>
+</html>

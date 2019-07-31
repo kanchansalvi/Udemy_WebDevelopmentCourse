@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Display</title>
+        
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: 100px;
+        width: 100;
+/*        visibility: hidden; */
+        /* This only hides element with blank space shown. */
+/*        display: none; */
+        /*To fully hide an element */
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    .greenbox{
+        background-color:#38c638;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    .great{
+        background-color: #ee3e3e;
+        display: block; /* makes an inline element a block element. Block element is where element is displayed in a  seperate block. Inline Elements are displayed right after other Elements. */
+    }
+         
+</style>
+        
+    </head>
+    
+    <body>
+       <div class="bluebox">
+           <p>Facebook is <span class="great">great</span></p>
+        </div>
+         <div class="yellowbox">
+           <p>Apple</p>
+        </div>
+         <div class="greenbox">
+           <p>Microsoft</p>
+        </div>
+    </body>
+</html>

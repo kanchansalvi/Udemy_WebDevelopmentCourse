@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> For Loop</title>
+</head>
+    
+<body>
+    <p id="myParagraph">Javascript</p>
+    <button onclick="initiateBalance()"> Start</button>
+    <div id="balance"> Current Balance : $1000</div>
+<script>
+    
+    var i=0;
+    while(i<6){
+        document.getElementById("myParagraph").innerHTML += "<br/>" + i;
+        i++;
+    }
+    
+    function initiateBalance(){
+    var balance = 1000;
+    var itemsBought = 0;
+      
+      while(balance > 0){
+          var itemPrice = Math.floor(Math.random() * 100);
+          
+          if(itemPrice <= balance){
+              itemsBought += 1;
+              balance -= itemPrice;
+              
+              document.getElementById("balance").innerHTML += "<p> Purchase Amount : $" + itemPrice + ". New Balance: $" + balance + ". </p>" ; }
+          }
+        document.getElementById("balance").innerHTML += "<p> You Bought: " + itemsBought + " items. , </p>"
+      }
+    
+    
+</script>
+</body>
+</html>
