@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Window and screen</title>
+    <style>
+        #div1{
+            background-color: aqua;
+        }
+         #div2{
+            background-color:bisque;
+        }
+         #div3{
+            background-color:aliceblue;
+        }
+         #div4{
+            background-color:blue;
+        }
+        .equalBox{
+            float: left;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+    
+<body>
+    
+    <div id = "div1" class="equalBox">Div1</div>
+    <div id = "div2" class="equalBox">Div2</div>
+    <div id = "div3" class="equalBox">Div3</div>
+    <div id = "div4" class="equalBox">Div4</div>
+<script>
+    
+<!--    Get height of window-->
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight ||
+        document.body.clientHeight;
+    window.alert(windowHeight);
+    
+//    Get available height of screen
+    var availableHeight = window.screen.availHeight;
+    window.alert(availableHeight);
+    
+//    width of window screen 
+    var screenWidth = window.screen.width;
+     window.alert(screenWidth);
+    
+    // Set Dimension to div
+//    document.getElementById("div1").style.width=window.innerWidth/4-10 + 'px';
+//    document.getElementById("div1").style.height=window.innerHeight-10 + 'px';
+    
+//    For loop 
+    for(i=1; i<5; i++){
+        document.getElementById("div" +i).style.width=window.innerWidth/4-10 + 'px';
+    document.getElementById("div" + i).style.height=window.innerHeight-10 + 'px';
+    }
+    
+</script>
+</body>   
+</html>
