@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Cookies</title>
+</head>
+    
+<body>
+    <p id="myPara">Javascript</p>
+    
+<script>
+
+document.cookie="username = name";
+document.cookie="age = 33";
+document.cookie="country = spain";
+window.alert(document.cookie);
+    
+var cookie = document.cookie.split(';');
+window.alert(cookie)
+
+for(i=0; i<cookie.length; i++){
+    document.getElementById("myPara").innerHTML += "<br/>" + cookie[i];
+}
+    
+//To check all the cookies, delete all the code in Script and write an alert to display cookies. Your cookies will still be displayed. 
+//   window.alert(document.cookie);
+
+</script>
+    
+</body>
+</html>
