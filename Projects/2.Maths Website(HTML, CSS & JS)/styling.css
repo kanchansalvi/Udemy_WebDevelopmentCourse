@@ -1,0 +1,93 @@
+html{
+    height=100%;
+    background: radial-gradient(circle,#fff,#ccc) ; //shape, centre color, outside color;
+}
+
+#container{
+    height: 400px;
+    width:550PX;
+    background-color: #90D2EA;
+    margin: 100px auto; /* Top and Bottom Margin to 100px and right and left to auto */
+    padding: 20px; /* Create space between Borders and the elements inside */
+    border-radius: 10px; /* Styling the corners of the Box */
+    box-shadow: 0px 4px 0px 0px #90D2EA; /* Syntax: box-shadow: [horizontal offset(+ve implies right of box)] [vertical offset(+ve at bottom of box)] [blur radius(opx is sharp. increasing is blurry)] [optional spread radius(size of the shadow)] [color(color of the shadow)] */
+    position: relative;
+}
+
+#score{
+    background-color: #F1FF92;
+    color: #888E5F;
+    padding: 10px;
+    position: absolute;
+    left: 500px;
+    box-shadow: 0px 4px #9DA853;
+}
+
+#correct{
+    position: absolute; /* position is absolute wrt to relative position of the container. If in container position is not relative, here absolute will be wrt the body. */
+    left: 260px;
+    background-color: #0A9D18;
+    color: white;
+    padding: 10px;
+    display: none; /* We will not show this all the time. Using JS we will show this box when answer is correct */
+}
+
+#wrong{
+    position: absolute; /* position is absolute wrt to relative position of the container. If in container position is not relative, here absolute will be wrt the body. */
+    left: 250px;
+    background-color: #DE401A;
+    color: white;
+    padding: 10px;
+    display: none;  /* We will not show this all the time. Using JS we will show this box when answer is correct */
+}
+
+#question{
+    width: 450px;
+    height: 150px;
+    margin: 50px auto 10px auto;  /*top right bottom left */
+    background-color: #9DA0EA;
+    box-shadow: 0px 4px #535AA8;
+    font-size: 100px;
+    text-align: center;
+    font-family: cursive,sans-serif;
+    color: black;
+}
+
+#instruction{
+    width: 450px;
+    height: 50px;
+    background-color: #B481D9;
+    margin: 10px auto;
+    text-align: center;
+    line-height: 45px;
+    box-shadow: 0px 4px #8153A8;
+}
+
+#choices{
+    width: 450px;
+    height: 100px;
+    margin: 5px auto;
+}
+
+.box{
+    width: 85px;
+    height: 85px;
+    background-color: white;
+    float: left;
+    margin-right: 36px;
+    border-radius: 3px;
+    cursor: pointer; /* When we hover on boxes, cursor changes to pointer */
+    box-shadow: 0px 4px rgb(0,0,0,0.2); /* We will set the grey color using RGB wit all 0 fo black and set the transparency to 0.2 */
+    text-align: center;
+    line-height: 80px;
+}
+
+.box:hover{
+    background-color: #9C89F6;
+    color: white;
+    box-shadow: 0px 4px #6B54D3;
+}
+
+#box4{
+    margin-right: 0;
+}
