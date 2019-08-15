@@ -12,17 +12,24 @@
     <body>
         <div id="container">
             <div id="score"> 
-                Score : <span id="scorevalue"> 0 </span> </div> <!-- Score changes during game so we will place inside span and replace using JS -->
+                Score : <span id="scorevalue">0</span> </div> <!-- Score changes during game so we will place inside span and replace using JS -->
             <div id="correct">Correct</div>
             <div id="wrong">Try Again !</div>
             <div id="question">4 * 9</div>
             <div id="instruction">Click on the correct answer </div>
             <div id="choices">
-                <div id="box1" class="box"></div>
-                <div id="box2" class="box"></div>
-                <div id="box3" class="box"></div>
-                <div id="box4" class="box"></div>
+                <div id="box1" class="box"> 36</div>
+                <div id="box2" class="box">35</div>
+                <div id="box3" class="box">63</div>
+                <div id="box4" class="box">54</div>
             </div>
+            <div id="startreset">Start Game
+            </div>
+            <div id="timeremaining">
+                Time Remaining: <span id="timeremainingvalue"></span>sec
+            </div>
+            <div id="gameover">Game over</div>
+            <script src="javascript.js"></script>
         </div>
     </body>
 </html>
