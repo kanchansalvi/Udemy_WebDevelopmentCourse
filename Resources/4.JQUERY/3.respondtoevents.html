@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Respond to Events</title>  
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: black;
+        height: 300px;
+        width: auto;
+    }
+    .greenbox{
+        background-color:#38c638;
+        color: white;
+        height: 300px;
+        width: auto;
+    }
+    .great{
+        background-color: #ee3e3e;
+    }
+         
+</style>
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+       <div class="bluebox">
+           <p>Facebook is <span id="great">great</span></p>
+           <p>Paragraph 2</p>
+        </div>
+        <p> This is great </p>
+         <div class="yellowbox">
+           <p>Apple</p>
+             <ul>
+                 <li>BMW</li>
+                 <li>Audi</li>
+                 <li>Mercedes</li>
+             </ul>
+             
+             <table>
+             <tr><th>Phone Maker</th>
+                 <th>Model</th>
+                 <th>Model</th>
+            </tr>
+             <tr><td>Apple</td>
+                 <td>Iphone 4</td>
+                 <td>16G</td>
+            </tr>
+            <tr><td>Apple</td>
+                 <td>Iphone 4</td>
+                 <td>16G</td>
+            </tr>
+            <tr><td>Apple</td>
+                 <td>Iphone 4</td>
+                 <td>16G</td>
+            </tr>
+            <tr><td>Apple</td>
+                 <td>Iphone 4</td>
+                 <td>16G</td>
+            </tr>
+            </table>
+                 
+            <p>Type your name:<input id="input"><button type="submit">click me</button></p>
+                 
+             <p href="www.google.com">This is Google link</p>
+             <p href="www.microsoft.com">This is Microsoft</p>
+        </div>
+         <div class="greenbox">
+           <p>Microsoft</p>
+        </div>
+        
+<script>
+$(function(){
+    
+$("p").click(function(){ //Function to execute when clicked on the <p>
+//    $("p").css("background-color","rgba(136,109,196,0.697)"); // change the background color of all the <p>
+    
+//    $(this).css("background-color","rgba(136,109,220,0.1)"); // change the background color of the <p> which is clicked
+    
+    $("p").mouseover(function(){
+        $(this).css("background-color","rgba(27,132,201,0.697)");
+    })
+    
+    $("p").mouseout(function(){
+        $(this).css("background-color","rgba(207,132,201,0.697)");
+    })
+    
+    $("input").focus(function(){
+        $(this).css("background-color","rgba(27,232,201,0.697)");
+    })
+    
+     $("input").blur(function(){
+        $(this).css("background-color","#ffffff");
+    })
+    
+    $("submit").keyup(function(){
+        $("#input").css("background-color","#ffffff");
+        $("#input").val("");
+    })
+    
+});
+
+});
+</script>
+    </body>
+</html>
+        

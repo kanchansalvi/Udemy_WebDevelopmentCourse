@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Embedding jQUERY and Syntax</title>
+<!--<script src="js/jquery-3.4.1.min.js"></script>-->
+    
+// Copy the snippet fronm "https://developers.google.com/speed/libraries/" for jQuery
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+    
+<body>
+<p id="myParagraph">jQUERY</p>
+<script>
+    
+    // Run the code only when the document is ready.  
+    // works with $(document).ready(function(). 
+    // Also works only if function is defined. i.e : function(){}
+$(document).ready(function(){  
+$("p").hide();    // Hide the element <p>
+});
+</script>
+</body>
+
+</html>

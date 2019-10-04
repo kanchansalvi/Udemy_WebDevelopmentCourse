@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Select HTML Elements</title>  
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: white;
+        height: 300px;
+        width: auto;
+    }
+    .greenbox{
+        background-color:#38c638;
+        color: white;
+        height: 300px;
+        width: auto;
+    }
+    .great{
+        background-color: #ee3e3e;
+    }
+         
+</style>
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+       <div class="bluebox">
+           <p>Facebook is <span id="great">great</span></p>
+           <p>Paragraph 2</p>
+        </div>
+        <p> This is great </p>
+         <div class="yellowbox">
+           <p>Apple</p>
+             <ul>
+                 <li>BMW</li>
+                 <li>Audi</li>
+                 <li>Mercedes</li>
+             </ul>
+             
+             <table>
+             <tr><th>Phone Maker</th>
+                 <th>Model</th>
+                 <th>Model</th>
+            </tr>
+             <tr><td>Apple</td>
+                 <td>Iphone 4</td>
+                 <td>16G</td>
+            </tr>
+            <tr><td>Apple</td>
+                 <td>Iphone 4</td>
+                 <td>16G</td>
+            </tr>
+            <tr><td>Apple</td>
+                 <td>Iphone 4</td>
+                 <td>16G</td>
+            </tr>
+            <tr><td>Apple</td>
+                 <td>Iphone 4</td>
+                 <td>16G</td>
+            </tr>
+            </table>
+                 
+            <p>Type your name:<input><button type="submit">click me</button></p>
+                 
+             <p href="www.google.com">This is Google link</p>
+             <p href="www.microsoft.com">This is Microsoft</p>
+        </div>
+         <div class="greenbox">
+           <p>Microsoft</p>
+        </div>
+        
+<script>
+$(function(){
+//$("*").css("font-size","40px"); // * : select all the elements
+//$("p").css("text-align","center");  // Make all the para to center
+//
+//$("div > p").css("text-align","center");  // Make all the para in div to center
+//    
+//$("div ~ p").css("text-align","center");  // Make all the para siblings in div to center
+    
+//$("div p").css("text-align","center");  // Make all the para descendents of div to center
+    
+$("#great").css("background-color","blue");  // Change by id of an element to blue
+    
+$(".yellowbox").css("background-color","orange"); //  Change by class of an element to blue
+    
+$("div.bluebox").css("font-family", "sans-serif"); // Change font-family of class bluebox 
+  
+$("p:first-child").css("text-decoration", "underline"); // Underline all the para who are the first child
+    
+$("p:last-child").css("text-decoration", "underline"); // Underline all the para who are the last child
+    
+$("p:first-child", "p:last-child").css("text-decoration", "underline"); // Underline all the para who are the first childs and last childs
+    
+$("[href]").css("color", "red");  // Change the color of href
+    
+$("li:first-child","li:last-child").css("background-color","blue"); // Change the background color of first and last child of the list
+    
+$("tr:even").css("background-color","green"); // change the background of table of all even rows
+    
+$("tr:odd").css("background-color","red"); // change the background of table of all odd rows
+
+$(":input").css("background-color", "#1DA492"); // change Background color of the Input
+    
+$(":Submit").css("background-color", "#797EB");  // Change Background color of the submit
+    
+$("div:has(table)").css("background-color","rgba(107, 180,198,0.697)"); //Change background color of div which has table
+    
+});
+</script>
+    </body>
+</html>
+        
