@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>7.JQuery Effects</title>  
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: 100px;
+        width: 300px;
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    .greenbox{
+        background-color:#38c638;
+        color: black;
+        height: auto;
+        width: auto;
+    }
+    .great{
+        background-color: #ee3e3e;
+    }
+	.sans-serif{
+		font-family: sans-serif;
+	}
+	p{
+		margin: 0px;
+	}
+         
+</style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+    </head>
+    
+    <body>
+					
+				<button>Button</button>
+       <div class="bluebox" id="facebook">
+           <p>Facebook is <span class="great" id="great">great</span></p>
+        </div>
+         <div class="yellowbox sans-serif" id="apple">
+           <p>Apple</p>
+        </div>
+         <div class="greenbox" id="microsoft">
+           <p id="microsoftPara">Microsoft</p>
+										<p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink">Microsoft Link</a></p>
+        </div>
+					
+					<p>Enter your name:<input> </p>
+					
+    </body>
+	<script>
+		$(function(){
+//			Load data from external file 
+			$("#facebook").load("ajax/somedata.txt");
+			
+//			Load data by id
+			$("#apple").load("ajax/somedata.txt #para1");
+			
+//			Load data onclick of a button
+//			$("button").click(function(){
+//				  $.ajax({url : "ajax/somedata.txt", 
+//														success : function(data){
+//																		$("#microsoft").html(data);}
+//													});
+//			});
+			
+			$("button").click(function(){
+				  $.ajax({url : "ajax/somedata.txt"}).done(function(somedata){$("#microsoft").html(somedata);
+																																																															       });
+			});
+		});
+	
+	</script>
+</html>
+        
