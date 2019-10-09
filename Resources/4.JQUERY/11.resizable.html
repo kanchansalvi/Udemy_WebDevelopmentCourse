@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>10. Resizable</title>  
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: 100px;
+        width: 300px;
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    .greenbox{
+        background-color:#38c638;
+        color: black;
+        height: 300;
+        width: 300;
+    }
+    .great{
+        background-color: #ee3e3e;
+    }
+	.sans-serif{
+		font-family: sans-serif;
+	}
+	p{
+		margin: 0px;
+	}
+	
+	#container{
+		width: 300px;
+		height:300px;
+		border-style: dotted;
+	}
+         
+</style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+					
+<!--					b)	Search the google cdn and go to google hhostedd libraries: select the jQuery UI and select the respective snippet -->
+<!--					Try replacing themes(sunny) with "smoothness", "blitzer" from jquery UI defined themes-->
+					<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+					
+					<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+					
+    </head>
+    
+    <body>
+					
+<!--					Using the class from UI-->
+       <div class="bluebox  ui-corner-all" id="facebook">
+           <p>Facebook is <span class="great" id="great">great</span></p>
+        </div>
+					
+									<div id="container">
+         <div class="yellowbox sans-serif ui-corner-all" id="apple">
+           <p>Apple</p>
+        </div>
+					   </div>
+         <div class="greenbox ui-corner-all" id="microsoft">
+           <p id="microsoftPara">Microsoft</p>
+										<p><a href="http://www.microsoft.com"      title="microsoft" id="microsoftLink">Microsoft Link</a></p>
+        </div>
+				
+    </body>
+	<script>
+	
+		$(function(){
+			$("#facebook").resizable({
+				maxHeight: 200,
+				minHeight: 50,
+				minWidth: 100,
+				maxWidth: 300,
+				aspectRatio: 4/3,
+				ghost: true,
+				alsoResize: "#microsoft"
+			});
+
+			$("#apple").resizable({
+				containment: "#container",
+				animate: true
+			});
+		});
+	
+	</script>
+</html>
+        

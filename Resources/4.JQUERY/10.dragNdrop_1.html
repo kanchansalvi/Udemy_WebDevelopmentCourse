@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>9. Drag and Drop</title>  
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: 100px;
+        width: 300px;
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    .greenbox{
+        background-color:#38c638;
+        color: black;
+        height: auto;
+        width: auto;
+    }
+    .great{
+        background-color: #ee3e3e;
+    }
+	.sans-serif{
+		font-family: sans-serif;
+	}
+	p{
+		margin: 0px;
+	}
+	
+	#droppable{
+		background-color:#aabbff;
+		color: red;
+        height: 300px;
+        width: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+         
+</style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+					
+<!--					b)	Search the google cdn and go to google hhostedd libraries: select the jQuery UI and select the respective snippet -->
+<!--					Try replacing themes(sunny) with "smoothness", "blitzer" from jquery UI defined themes-->
+					<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+					
+					<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+					
+    </head>
+    
+    <body>
+					
+<!--					Using the class from UI-->
+       <div class="bluebox  ui-corner-all" id="facebook">
+           <p>Facebook is <span class="great" id="great">great</span></p>
+        </div>
+					
+         <div class="yellowbox sans-serif ui-corner-all" id="apple">
+           <ul id="list">
+															<li>eggs</li>
+															<li>milk</li>
+															<li>bread</li>
+										</ul>
+        </div>
+					
+         <div class="greenbox ui-corner-all" id="microsoft">
+           <p id="microsoftPara">Microsoft</p>
+										<p><a href="http://www.microsoft.com"      title="microsoft" id="microsoftLink">Microsoft Link</a></p>
+        </div>
+					
+									
+<!--					Class from the jquery UI link-->
+					<div class = " ui-state-error" style="height: 100px; margin-top: 20px">
+					<p>Error message</p></div>
+					
+					<div id="droppable" class="ui-corner-all">You can drop things here</div>
+    </body>
+	<script>
+//		a array of messages that is shown when microsoft div is drag around
+		var message=["Please", "Thank You", "Hello", "Welcome"];
+		
+		$(function(){
+//		Make the facebook div to be draggable
+$("#facebook").draggable();
+			
+//			Drag along the Y-axis 
+$("#apple").draggable({axis: "y"});
+			
+//			Revert to original place when droppped
+$("#microsoft").draggable({revert : true});
+//			Calling the function when an item is dragged and dropped
+//			Change Facebook color when microsoft div is dragged
+$("#microsoft").draggable({revert : true, start : function(){
+			     $("#facebook").css("background-color", "#43c8d4");},
+//							Change microsoft color to random color
+								drag: function(){
+									$("#microsoft").css("background-color", "#f07f60");
+								
+									//								Have a array of messages that is shown when microsoft div is drag around
+									$("#microsoft").find("p").html(message[Math.floor(4*Math.random())]);
+								},
+																											
+//							Change background color of apple div when dragging is stopped
+								stop: function(){
+									$("#apple").css("background-color", "#b34fff");
+								$("#microsoft").html('<p>Finally</p>')
+								}																				
+});
+//					Change background color of div when dropped
+//			$("#droppable").droppable({drop: function(){
+//				$(this).css("background-color","#21dd86");
+//			},
+			
+			$("#droppable").droppable({drop: function(event, ui){ 
+				$(this).css("background-color","#21dd55");
+				$(this).find("p").remove();
+				$("<div></div>").text(ui.draggable.text()).appendTo(this)
+			},
+		accept: "#list li"																						
+		});
+			$("#list").find("li").draggable({
+				helper: "clone",
+				appendTo: "body"
+			});
+		});
+	
+	</script>
+</html>
+        
