@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>12. Selectable</title>  
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: white;
+        height: auto;
+        width: auto;
+					padding: 10px;
+    }
+    .greenbox{
+        background-color:#38c638;
+        color: black;
+        height: auto;
+        width: 300;
+					padding: 10px;
+    }
+    .great{
+        background-color: #ee3e3e;
+    }
+	.sans-serif{
+		font-family: sans-serif;
+	}
+	p{
+		margin: 0px;
+	}
+	
+	li{
+		font-size: 2em;
+		margin-bottom: 5px;
+		text-align: center;
+	}
+	
+	.connectList{
+		border: 1px solid #eee;
+		min-height: 20px;
+	}
+         
+</style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+					
+<!--					b)	Search the google cdn and go to google hhostedd libraries: select the jQuery UI and select the respective snippet -->
+<!--					Try replacing themes(sunny) with "smoothness", "blitzer" from jquery UI defined themes-->
+					<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+					
+					<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+					
+    </head>
+    
+    <body>
+					
+<!--					Using the class from UI-->
+       <div class="bluebox  ui-corner-all" id="facebook">
+           <p>Facebook is <span class="great" id="great">great</span></p>
+        </div>
+					
+									<div id="container">
+         <div class="yellowbox sans-serif ui-corner-all" id="apple">
+											<ul id="list1" class="connectList">
+										<li class = "ui-state-default">Audi</li>
+										<li class = "ui-state-default">BMW</li>
+										<li class = "ui-state-default notSort">Mercedes</li>
+										</ul>
+										</div>
+					   </div>
+         <div class="greenbox ui-corner-all" id="microsoft">
+           <p id="microsoftPara">Microsoft</p>
+										<p><a href="http://www.microsoft.com"      title="microsoft" id="microsoftLink">Microsoft Link</a></p>
+												<ul id="list2" class="connectList">
+										<li class = "ui-state-default">Audi</li>
+										<li class = "ui-state-default">BMW</li>
+										<li class = "ui-state-default notSort">Ferrari</li>
+										</ul>
+        </div>
+				
+    </body>
+	<script>
+	
+		$(function(){
+			
+//			Reorder the list items
+$("#list1").sortable({
+//			Check the placeholder of the items
+			placeholder: "ui-state-highlight",
+//	Make the last item non-sortable:
+	cancel: ".notSort"
+});
+			
+			$("#list2").sortable();
+			$("#list1, #list2").sortable({
+				connectWith: ".connectList"
+			});
+		});
+	
+	</script>
+</html>
+        
