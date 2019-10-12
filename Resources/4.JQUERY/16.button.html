@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>16: Buttons</title>  
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: 100px;
+        width: auto;
+					   margin: 5px;
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: black;
+        height: 100px;
+        width: auto;
+					   padding: 10px;
+					   margin: 5px;
+    }
+    .greenbox{
+        background-color:#38c638;
+        color: black;
+        height: 100px;
+        width: auto;
+					   padding: 10px;
+					   margin: 5px;
+    }
+    
+         
+</style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+					
+<!--					b)	Search the google cdn and go to google hhostedd libraries: select the jQuery UI and select the respective snippet -->
+<!--					Try replacing themes(sunny) with "smoothness", "blitzer", "sunny" from jquery UI defined themes-->
+					<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
+					
+					<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+					
+    </head>
+    
+    <body>
+
+<!--					Using the class from UI-->
+       <div class="bluebox  ui-corner-all" id="facebook">
+							<div id="checkboxes">
+								<input type="checkbox" id="checkbox1">
+								<label for="checkbox1">Audi</label>
+								<input type="checkbox" id="checkbox2">
+								<label for="checkbox2">BMW</label>
+								<input type="checkbox" id="checkbox3">
+								<label for="checkbox3">Mercedes</label>
+								</div>
+								           
+				</div>
+					
+									<div id="container">
+										<div class="yellowbox sans-serif ui-corner-all" id="apple">
+											<input type="checkbox" id="myCheckbox">
+											<label for="myCheckbox">Checkbox</label>
+										</div>
+					   </div>
+         <div class="greenbox ui-corner-all" id="microsoft">
+										<form>
+										<div id="radioBoxes">
+											
+											<input type="radio"
+ id= "radioBox1" name = "radioBoxes">
+											<label for="radioBox1">Ford</label><input type="radio"
+ id= "radioBox2" name = "radioBoxes">
+											<label for="radioBox2">Toyota</label><input type="radio"
+ id= "radioBox3" name = "radioBoxes">
+											<label for="radioBox3">Ferrari</label>
+											</div></form>
+        </div>
+					
+					<button id="button1">Button 1</button>
+					<button id="button2">Button 2</button>
+					<button id="button3">Button 3</button>
+				
+    </body>
+	<script>
+	
+		$(function(){
+			$("#button1").button();
+//			Adding icon to button: primary icon goes on left, secondary on right
+			$("#button2").button({
+				icons: {
+//					https://api.jqueryui.com/theming/icons/
+					primary: "ui-icon-folder-open"
+				},
+//				Show only icon:
+				text: false
+			});
+$("#button3").button({
+//	Show two icons on the button. One before text and other after the text
+	icons: {
+		primary: "ui-icon-mail-closed",
+		secondary: "ui-icon-triangle-1-e"
+	}
+});
+				$("#myCheckbox").button();
+//			Styling checkboxes of facebook
+			$("#checkboxes").buttonset();
+			$("#radioBoxes").buttonset();
+			
+});
+		
+	
+	
+	</script>
+</html>
+        

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>17. Date Picker</title>  
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: 100px;
+        width: auto;
+					padding: 20px;
+					margin: 10px;
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: white;
+        height: 100px;
+        width: auto;
+    }
+    .greenbox{
+        background-color:#38c638;
+        color: black;
+        height: auto;
+        width: auto;
+    }
+    .great{
+        background-color: #ee3e3e;
+    }
+	.sans-serif{
+		font-family: sans-serif;
+	}
+	p{
+		margin: 0px;
+	}
+         
+</style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+					
+<!--					b)	Search the google cdn and go to google hhostedd libraries: select the jQuery UI and select the respective snippet -->
+<!--					Try replacing themes(sunny) with "smoothness", "blitzer" from jquery UI defined themes-->
+					<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/sunny/jquery-ui.css">
+					
+					<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+					
+    </head>
+    
+    <body>
+					
+<!--					Using the class from UI-->
+       <div class="bluebox  ui-corner-all" id="facebook">
+								<p>Flight Departure date: <input id="departure"></p>
+								<p>Flight Return date: <input id="return"></p>
+        </div>
+					
+         <div class="yellowbox sans-serif ui-corner-all" id="apple">
+           <p>Apple</p>
+        </div>
+					
+         <div class="greenbox ui-corner-all" id="microsoft">
+           <p id="microsoftPara">Microsoft</p>
+										<p><a href="http://www.microsoft.com"      title="microsoft" id="microsoftLink">Microsoft Link</a></p>
+        </div>
+					
+<!--					Class from the jquery UI link-->
+					<div class = " ui-state-error" style="height: 100px; margin-top: 20px">
+					<p>Error message</p></div>
+    </body>
+	<script>
+		$(function(){
+			$("#departure").datepicker({
+//				Effects to the datepicker
+				showAnim: "slideDown" ,//try "fadeIn
+//				Show yeart  to pick
+				changeYear: true,
+//				Show months:
+				numberOfMonths: 1,
+//				Date formatchange:
+				dateFormat: "d M,y",  //try "m/dd/yy", "mm/d/yy", "MM/dd/y", "M/dd/yy" "mm/DD/yy"
+//				Add btton
+				showOn: "button",
+//				Styling Button:
+//				buttonImage:"images/calendar.png",
+//				buttonImageOnly: true,
+				buttonText:"Choose date",
+//				Setting bounds:
+				minDate: +1,
+				maxDate: "+12M +10D",
+//				Make the return date to start from the date departure is selected
+				onClose: function(selectedDate){
+					$("#return").datepicker("option","minDate", selectedDate)
+				},
+//				Add Week
+				showWeek: true
+			});
+			$("#return").datepicker({
+				dateFormat:"d M, y"
+			});
+
+		});
+	
+	</script>
+</html>
+        
