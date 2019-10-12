@@ -2,27 +2,28 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>12. Selectable</title>  
+        <title>14. Accordion: Resizable accordion with collapsible sections</title>  
 <style>
     .bluebox{
         background-color: #4267B2;
         color: white;
-        height: 100px;
+        height: 300px;
         width: auto;
     }
     
     .yellowbox{
         background-color: #F5F804;
         color: white;
-        height: auto;
+        height: 100px;
         width: auto;
 					padding: 10px;
     }
     .greenbox{
         background-color:#38c638;
         color: black;
-        height: 300;
+        height: auto;
         width: 300;
+					padding: 10px;
     }
     .great{
         background-color: #ee3e3e;
@@ -39,13 +40,14 @@
 		margin-bottom: 5px;
 		text-align: center;
 	}
-	#list .ui-selecting{
-		background: #740da0;
+/*Styling for autocomplete boxx*/
+	.ui-autocomplete{
+		max-height: 100px;
+		overflow-y: auto;
+		max-width: 200px;
 	}
-	
-	#list .ui-selected{
-		background: #953ebb;
-		color: white;
+	#city{
+		width: 200px;
 	}
          
 </style>
@@ -60,19 +62,16 @@
     </head>
     
     <body>
-					
+
 <!--					Using the class from UI-->
        <div class="bluebox  ui-corner-all" id="facebook">
-           <p>Facebook is <span class="great" id="great">great</span></p>
-        </div>
+								<p>Facebook</p>
+								<p>Input your city : <input id="city"></p>
+           
+				</div>
 					
 									<div id="container">
          <div class="yellowbox sans-serif ui-corner-all" id="apple">
-											<ul id="list">
-										<li class = "ui-state-default">Audi</li>
-										<li class = "ui-state-default">BMW</li>
-										<li class = "ui-state-default">Mercedes</li>
-										</ul>
 										</div>
 					   </div>
          <div class="greenbox ui-corner-all" id="microsoft">
@@ -84,14 +83,8 @@
 	<script>
 	
 		$(function(){
-			
-//			Make the item selectable and append the item to the microsoft div
-$("#list").selectable({
-	stop: function(){
-		$(".ui-selected").each(function(){
-			$('<p></p>').text($(this).text()).appendTo("#microsoft")
-		});
-	}
+$("#city").autocomplete({
+	source: ["Looooooooooooooooooooooooooooooooooooondon", "London", "London","Paris", "Paris","Paris","Madrid","California"]
 });
 		});
 	

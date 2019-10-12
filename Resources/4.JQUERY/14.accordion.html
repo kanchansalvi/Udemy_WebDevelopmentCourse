@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>12. Selectable</title>  
+        <title>14. Accordion: Resizable accordion with collapsible sections</title>  
 <style>
     .bluebox{
         background-color: #4267B2;
         color: white;
-        height: 100px;
+        height: auto;
         width: auto;
     }
     
@@ -21,8 +21,9 @@
     .greenbox{
         background-color:#38c638;
         color: black;
-        height: 300;
+        height: auto;
         width: 300;
+					padding: 10px;
     }
     .great{
         background-color: #ee3e3e;
@@ -39,13 +40,10 @@
 		margin-bottom: 5px;
 		text-align: center;
 	}
-	#list .ui-selecting{
-		background: #740da0;
-	}
-	
-	#list .ui-selected{
-		background: #953ebb;
-		color: white;
+/*	To make the items go again to the microsoft div*/
+	.connectList{
+		border: 1px solid #eee;
+		min-height: 20px;
 	}
          
 </style>
@@ -60,19 +58,28 @@
     </head>
     
     <body>
-					
+<!--					Jquery API documentation -> theming -> CSS Framework -> Widget containers copy paste  .ui-widget-content in class  https://api.jqueryui.com/theming/css-framework/-->
+			<div id = "resizer" class = "ui-widget-content">
 <!--					Using the class from UI-->
        <div class="bluebox  ui-corner-all" id="facebook">
-           <p>Facebook is <span class="great" id="great">great</span></p>
+           <h3>Section 1</h3>
+								<div>
+									<p> Content 1</p>
+									<p> Content 1</p>
+									<p> Content 1</p>
+									<p> Content 1</p>
+									<p> Content 1</p>
+									<p> Content 1</p>
+								</div>
+								<h3>Section 2</h3>
+								<div><p> Content 2</p></div>
+								<h3>Section 3</h3>
+								<div><p> Content 3</p></div>
         </div>
+				</div>
 					
 									<div id="container">
          <div class="yellowbox sans-serif ui-corner-all" id="apple">
-											<ul id="list">
-										<li class = "ui-state-default">Audi</li>
-										<li class = "ui-state-default">BMW</li>
-										<li class = "ui-state-default">Mercedes</li>
-										</ul>
 										</div>
 					   </div>
          <div class="greenbox ui-corner-all" id="microsoft">
@@ -84,15 +91,23 @@
 	<script>
 	
 		$(function(){
-			
-//			Make the item selectable and append the item to the microsoft div
-$("#list").selectable({
-	stop: function(){
-		$(".ui-selected").each(function(){
-			$('<p></p>').text($(this).text()).appendTo("#microsoft")
-		});
-	}
+$("#facebook").accordion({
+//			Making the sections collapsible:
+	collapsible : true,
+//	Icon for the collapsing
+	icons: {
+//	This is from 	https://jqueryui.com/themeroller/ Choose the icon name and input in your code
+						header: "ui-icon-circle-arrow-e",
+		activeHeader: "ui-icon-circle-arrow-s"
+	},
+//	To adjust the height. try using value "content"
+	heightStyle: "fill"
 });
+			$("#resizer").resizable({
+				resize: function(){
+					$("#facebook").accordion("refresh");
+				}
+			});
 		});
 	
 	</script>
