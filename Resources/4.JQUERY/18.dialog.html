@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>18. Dialog</title>  
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: 100px;
+        width: auto;
+					   margin: 5px;
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: black;
+        height: 100px;
+        width: auto;
+					   padding: 10px;
+					   margin: 5px;
+    }
+    .greenbox{
+        background-color:#38c638;
+        color: black;
+        height: 100px;
+        width: auto;
+					   padding: 10px;
+					   margin: 5px;
+    }
+    
+         
+</style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+					
+<!--					b)	Search the google cdn and go to google hhostedd libraries: select the jQuery UI and select the respective snippet -->
+<!--					Try replacing themes(sunny) with "smoothness", "blitzer", "sunny" from jquery UI defined themes-->
+					<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
+					
+					<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+					
+    </head>
+    
+    <body>
+
+<!--					Using the class from UI-->
+       <div class="bluebox  ui-corner-all" id="facebook">
+								<p>Facebook</p>
+							</div>
+							<div class="yellowbox sans-serif ui-corner-all" id="apple">
+								<p>Apple</p>
+							</div>
+       <div class="greenbox ui-corner-all" id="microsoft">
+								<p>Microsoft</p>
+					</div>
+					<div id= "myDialog" title="This is a dialog.">
+					<p>Welcome to our page.</p></div>
+				
+<!--					Create a dialog div-->
+					<div id="confirmation" title="Leave the page ?"><p><span class="ui-icon-alert" style="float: left"></span>Will lose all unsaved work. Continue?</p></div>
+					
+					<button id="open">Open Dialog</button>
+					<button id="goToPreviousPage">go To  Previous Page</button>
+    </body>
+	<script>
+	
+		$(function(){
+		$("#myDialog").dialog({
+			autoOpen: false
+		});
+//			Open dialog on click of button
+			$("#open").click(function(){
+				$("#myDialog").dialog("open");
+			});
+			$("button").button();
+			
+//			Confirmation dialog
+			$("#confirmation").dialog({
+				autoOpen: false,
+				modal: true,
+				buttons:{
+					"Go to Previous Page" : function(){
+						window.history.back();
+					},
+					Cancel: function(){
+						$(this).dialog("close");
+					}
+				}
+			});
+			$("#goToPreviousPage").click(function(){
+				$("#confirmation").dialog("open");
+			})
+});
+		
+	
+	
+	</script>
+</html>
+        
