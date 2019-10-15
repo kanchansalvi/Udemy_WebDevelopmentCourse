@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>18. Dialog</title>  
+        <title>21. Select Menu</title>  
 <style>
     .bluebox{
         background-color: #4267B2;
@@ -28,6 +28,14 @@
 					   padding: 10px;
 					   margin: 5px;
     }
+	#label{
+		position: absolute;
+		left: 45%;
+	}
+	
+	#strength, #strength2{
+		width: 200px;
+	}
     
          
 </style>
@@ -45,51 +53,45 @@
 
 <!--					Using the class from UI-->
        <div class="bluebox  ui-corner-all" id="facebook">
-								<p>Facebook</p>
+								<form>
+								<label for="strength">Select your biggest strength : </label><br/>
+										<select id="strength" name="strength">
+								<option>Motivation</option>
+								<option selected="selected">Creativity</option>
+								<option>Curiosity</option>
+								<option>Honesty</option>
+								<option>Modesty</option>
+								</select>
+								</form>
 							</div>
 							<div class="yellowbox sans-serif ui-corner-all" id="apple">
 								<p>Apple</p>
+								<label for="strength2">Select your biggest strength : </label><br/>
+								<form>
+								<select id="strength2" name="strength2">
+									<optgroup label="Group1">
+													<option>Motivation</option>
+													<option selected="selected">Creativity</option>
+													<option>Curiosity</option>
+									</optgroup>
+								<optgroup label="Group2">
+													<option>Honesty</option>
+													<option>Modesty</option>
+									</optgroup>
+								</select>
+								</form>
 							</div>
        <div class="greenbox ui-corner-all" id="microsoft">
 								<p>Microsoft</p>
 					</div>
-					<div id= "myDialog" title="This is a dialog.">
-					<p>Welcome to our page.</p></div>
-				
-<!--					Create a dialog div-->
-					<div id="confirmation" title="Leave the page ?"><p><span class="ui-icon-alert" style="float: left"></span>Will lose all unsaved work. Continue?</p></div>
 					
-					<button id="open">Open Dialog</button>
-					<button id="goToPreviousPage">go To  Previous Page</button>
+					
     </body>
 	<script>
 	
 		$(function(){
-		$("#myDialog").dialog({
-			autoOpen: false
-		});
-//			Open dialog on click of button
-			$("#open").click(function(){
-				$("#myDialog").dialog("open");
-			});
-			$("button").button();
-			
-//			Confirmation dialog
-			$("#confirmation").dialog({
-				autoOpen: false,
-				modal: true,
-				buttons:{
-					"Go to Previous Page" : function(){
-						window.history.back();
-					},
-					Cancel: function(){
-						$(this).dialog("close");
-					}
-				}
-			});
-			$("#goToPreviousPage").click(function(){
-				$("#confirmation").dialog("open");
-			});
+	$("#strength").selectmenu();
+	$("#strength2").selectmenu();
 });
 		
 	

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>18. Dialog</title>  
+        <title>23. More Widgets</title>  
 <style>
     .bluebox{
         background-color: #4267B2;
@@ -15,7 +15,7 @@
     .yellowbox{
         background-color: #F5F804;
         color: black;
-        height: 100px;
+        height: auto;
         width: auto;
 					   padding: 10px;
 					   margin: 5px;
@@ -27,8 +27,9 @@
         width: auto;
 					   padding: 10px;
 					   margin: 5px;
+					margin-bottom: 30px;
     }
-    
+	
          
 </style>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
@@ -45,55 +46,57 @@
 
 <!--					Using the class from UI-->
        <div class="bluebox  ui-corner-all" id="facebook">
-								<p>Facebook</p>
+								<p>
+									<label for="myInput">Enter a value: </label>
+										<input id="myInput" name="myInput" value="30" title="Please enter a value">
+								</p>
 							</div>
 							<div class="yellowbox sans-serif ui-corner-all" id="apple">
-								<p>Apple</p>
+								<ul>
+									<li><a href="#tab1">tab 1</a></li>
+								 <li><a href="#tab2">tab 2</a></li>
+									<li><a href="#tab3">tab 3</a></li>
+								</ul>
+								
+								<div id="tab1"><p>content 1</p></div>
+								<div id="tab2"><p>content 2</p></div>
+								<div id="tab3"><p>content 3</p></div>
+								
+								
 							</div>
-       <div class="greenbox ui-corner-all" id="microsoft">
+       <div class="greenbox ui-corner-all" id="microsoft" title= "This is microsoft">
 								<p>Microsoft</p>
 					</div>
-					<div id= "myDialog" title="This is a dialog.">
-					<p>Welcome to our page.</p></div>
-				
-<!--					Create a dialog div-->
-					<div id="confirmation" title="Leave the page ?"><p><span class="ui-icon-alert" style="float: left"></span>Will lose all unsaved work. Continue?</p></div>
-					
-					<button id="open">Open Dialog</button>
-					<button id="goToPreviousPage">go To  Previous Page</button>
-    </body>
+
 	<script>
 	
 		$(function(){
-		$("#myDialog").dialog({
-			autoOpen: false
-		});
-//			Open dialog on click of button
-			$("#open").click(function(){
-				$("#myDialog").dialog("open");
+			$("#myInput").spinner({
+				min: 0,
+				max: 100,
+				step: 3
 			});
-			$("button").button();
+		 
+	$("#apple").tabs({
+		collapsible: true,
+		event: "mouseover"
+	});
 			
-//			Confirmation dialog
-			$("#confirmation").dialog({
-				autoOpen: false,
-				modal: true,
-				buttons:{
-					"Go to Previous Page" : function(){
-						window.history.back();
-					},
-					Cancel: function(){
-						$(this).dialog("close");
-					}
-				}
+//			To change the position of tabs
+			$("#apple").tabs().find(".ui-tabs-nav").sortable({
+				axis:"x"
 			});
-			$("#goToPreviousPage").click(function(){
-				$("#confirmation").dialog("open");
+//			Showing tooltip
+			$("#myInput").tooltip({
+				show: {effect: "explode"} //Try explode, slidedown
 			});
+			
+//			Adding tooltip to all the elements in the page: Tooltip will be shown for all the elements having title
+			$(document).tooltip();
 });
 		
-	
-	
 	</script>
+	
+</body>
 </html>
         

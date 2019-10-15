@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>18. Dialog</title>  
+        <title>20. Progress Bar</title>  
 <style>
     .bluebox{
         background-color: #4267B2;
@@ -28,6 +28,10 @@
 					   padding: 10px;
 					   margin: 5px;
     }
+	#label{
+		position: absolute;
+		left: 45%;
+	}
     
          
 </style>
@@ -53,42 +57,32 @@
        <div class="greenbox ui-corner-all" id="microsoft">
 								<p>Microsoft</p>
 					</div>
-					<div id= "myDialog" title="This is a dialog.">
-					<p>Welcome to our page.</p></div>
-				
-<!--					Create a dialog div-->
-					<div id="confirmation" title="Leave the page ?"><p><span class="ui-icon-alert" style="float: left"></span>Will lose all unsaved work. Continue?</p></div>
 					
-					<button id="open">Open Dialog</button>
-					<button id="goToPreviousPage">go To  Previous Page</button>
+					<div id="progress">
+								<div id="label"></div>
+					</div>
+					<button>Run</button>
+					
     </body>
 	<script>
 	
 		$(function(){
-		$("#myDialog").dialog({
-			autoOpen: false
+		$("#progress").progressbar({
+			value: 0
 		});
-//			Open dialog on click of button
-			$("#open").click(function(){
-				$("#myDialog").dialog("open");
-			});
-			$("button").button();
-			
-//			Confirmation dialog
-			$("#confirmation").dialog({
-				autoOpen: false,
-				modal: true,
-				buttons:{
-					"Go to Previous Page" : function(){
-						window.history.back();
-					},
-					Cancel: function(){
-						$(this).dialog("close");
-					}
-				}
-			});
-			$("#goToPreviousPage").click(function(){
-				$("#confirmation").dialog("open");
+//			Fill the progress bar on click of a Button
+			var x=0;
+			$("button").click(function(){
+			$("#label").text("In progress...");
+				
+				setTimeout(function(){
+					var progress = setInterval(function(){
+					x++;
+					$("#label").text(x+'%');
+					$("#progress").progressbar("option", "value", x);
+					if(x>99){clearInterval(progress);	}
+				},100);
+				},1000);
 			});
 });
 		

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>19. Menu</title>  
+<style>
+    .bluebox{
+        background-color: #4267B2;
+        color: white;
+        height: auto;
+        width: auto;
+					   margin: 5px;
+    }
+    
+    .yellowbox{
+        background-color: #F5F804;
+        color: black;
+        height: auto;
+        width: auto;
+					   padding: 10px;
+					   margin: 5px;
+    }
+    .greenbox{
+        background-color:#38c638;
+        color: black;
+        height: 100px;
+        width: auto;
+					   padding: 10px;
+					   margin: 5px;
+    }
+	.ui-menu{
+		width: 150px;
+	}
+    
+         
+</style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+					
+<!--					b)	Search the google cdn and go to google hhostedd libraries: select the jQuery UI and select the respective snippet -->
+<!--					Try replacing themes(sunny) with "smoothness", "blitzer", "sunny" from jquery UI defined themes-->
+<!--					<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/start/jquery-ui.css">-->
+<!--					use this ui for arrow-->
+					<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/start/jquery-ui.css">
+					
+					<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+					
+    </head>
+    
+    <body>
+
+<!--					Using the class from UI-->
+       <div class="bluebox  ui-corner-all" id="facebook">
+								<p>Facebook</p>
+								<ul id="continents">
+								<li>Europe
+									<ul>
+										<li>France</li>
+										<li>UK
+											  <ul>
+														<li>England</li>
+														<li>Scotland</li>
+														<li>Wales</li>
+														<li>Northern Ireland</li>
+										   </ul>
+											</li>
+										<li>Spain</li>
+									</ul>
+									</li>
+								<li>Africa</li>
+								<li>America</li>
+								<li>Asia</li>
+								<li>Australia</li>
+								</ul>
+							</div>
+							<div class="yellowbox sans-serif ui-corner-all" id="apple">
+								<p>Apple</p>
+								<ul id="continents2">
+									<li class="ui-widget-header">Europe</li>
+										<li>France</li>
+										<li>UK
+											  <ul>
+														<li>England</li>
+														<li>Scotland</li>
+														<li>Wales</li>
+														<li>Northern Ireland</li>
+										   </ul>
+											</li>
+										<li>Spain</li>
+								<li class="ui-widget-header">Africa</li>
+								<li class="ui-widget-header">America</li>
+								<li class="ui-widget-header">Asia</li>
+								<li class="ui-widget-header">Australia</li>
+								</ul>
+							</div>
+       <div class="greenbox ui-corner-all" id="microsoft">
+								<p>Microsoft</p>
+					</div>
+					
+    </body>
+	<script>
+	
+		$(function(){
+			$("#continents").menu();
+			$("#continents2").menu();
+	
+});
+		
+	
+	
+	</script>
+</html>
+        
