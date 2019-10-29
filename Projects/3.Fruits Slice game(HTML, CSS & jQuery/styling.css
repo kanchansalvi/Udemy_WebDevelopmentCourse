@@ -1,0 +1,55 @@
+html{
+	height: 100%;
+	background: radial-gradient(circle,#fff,#ccc);
+/*	shape, centre color, outside color;*/
+}
+
+#container{
+	width: 1100px;
+	height: 500px;
+	background: radial-gradient(circle,#1cadff, #1cadfa);
+	position:absolute;
+	padding: 10px;
+	margin: 50px;
+}
+
+#score{
+	width: 100px;
+	height: 25px;
+	background-color: yellow;
+	text-align: center;
+	padding: 5px;
+	left: 980px;
+	position: absolute;
+}
+
+#attemptsLeft{
+	width: 100px;
+	height: 25px;
+	background-color: yellow;
+	text-align: center;
+	padding: 5px;
+	right: 980px;
+	position: absolute;
+}
+
+#fruitContainer{
+	width: 1040px;
+	height: 400px;
+	background-color: white;
+	position:absolute;
+	padding: 10px;
+	top: 50px;
+	left: 30px;
+}
+
+#startReset{
+	width: 100px;
+	height: 20px;
+	background-color: yellow;
+	text-align: center;
+	padding: 5px;
+	left: 980px;
+	bottom: 10px;
+	position: absolute;
+}
