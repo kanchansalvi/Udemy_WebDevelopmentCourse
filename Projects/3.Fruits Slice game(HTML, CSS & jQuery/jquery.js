@@ -40,8 +40,9 @@ $(function(){
 //								Set Score to 0
 			else {
 						playing = true;
+				 $("#startReset").text("STOP");
 						score = 0;
-						$("#scorevalue").html("09");
+						$("#scorevalue").html("0");
 //				Show trials left
 				  $("#attemptsLeft").show();
 						addHearts();
@@ -53,17 +54,22 @@ $(function(){
 $("#fruit").mouseover(function(){
 				score++;
 				$("#scorevalue").html(score);
-//	
-//	 //stop fruit     
+	
+	//play sound
+	    document.getElementById("slicesound").play();     $("#slicesound")[0].play();       
+	
+	 //stop fruit     
 	clearInterval(action); 
-//	
+	
 	   $("#fruit").hide() ;
 				setTimeout(startAction(), 500);
-//	
+	
 });
 
 
 function addHearts(){
+	
+	$("#attemptsLeft").empty();
 	for(i=0; i<attemptsLeft; i++){
 		$("#attemptsLeft").append('<img src="images/heart.png">  ');
 	}
@@ -101,7 +107,18 @@ function moveFruit(){
 					if(attemptsLeft > 1){
 						$("#fruit").show();
 						generateFruit();
+					} else {
+						  gameover();
 					}
-		}
+			   attemptsLeft--;
+						addHearts();
+		} 
 },10);
+}
+
+function gameover(){
+	 $("#gameover").show();
+		$("#attemptsLeft").hide();
+	 $("#startReset").text("START");
+	 $("#gameover").html("<p> Game Over. </br>Your score is : " + score + "</p");
 }

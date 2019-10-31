@@ -13,6 +13,18 @@ html{
 	margin: 50px;
 }
 
+#gameName{
+	width: 600px;
+	height: 25px;
+	text-align: center;
+	left: 200px;
+	position: absolute;
+	font-size: 1.8em;
+	text-decoration: bold;
+	text-transform: uppercase;
+	color: yellow;
+}
+
 #score{
 	width: 100px;
 	height: 25px;
@@ -60,4 +72,20 @@ html{
 #fruit{
 	display: none;
 	position: absolute;
+}
+
+#gameover{
+	height: 150px;
+	width: 800px;
+	text-align: center;
+	font-size: 2.5em;
+	text-decoration: bold;
+	text-transform: uppercase;
+	background-color: yellow;
+	z-index: 2;
+	left: 100px;
+	top: 50px;
+	position: relative;
+	padding: 30px;
+	display: none;
 }
