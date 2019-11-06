@@ -1,0 +1,61 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+			 <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+
+    <title>Hello, world!</title>
+			
+			<style>
+				#deviceSize{
+					margin-bottom: 30px;
+				}
+				.bluebox{
+					background-color: #2fcb58;
+					height: 200px;
+				}
+				.greenbox{
+					background-color: #8deb46;
+					height: 200px;
+				}
+			</style>
+  </head>
+  <body>
+			
+			<div class="container-fluid">
+				<div id="deviceSize">Device Size:</div>
+<!--	Change the devices to take columns for medium devices. To change for small devices use another class -->
+				<div class = "bluebox col-md-8 col-sm-6 col-xs-6"></div>
+				<div class="greenbox col-md-4 col-sm-6 col-xs-6"></div>
+			</div>
+
+    <!--  -->
+    <!-- JavaScript and jQuery for  Bootstrap  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+			
+			<script>
+			$(function(){
+				$(window).resize(function(){
+					var windowWidth = $(window).width();
+						if(windowWidth < 768){
+							$("#deviceSize").text('DeviceSize: ' + windowWidth + 'px - Extra Small Devices (Phone)');
+						} else if(windowWidth < 992){
+							$("#deviceSize").text('DeviceSize: ' + windowWidth + 'px - Small Devices (Tablets)');
+						} else if(windowWidth < 1200){
+							$("#deviceSize").text('DeviceSize: ' + windowWidth + 'px - Medium Devices (Desktops)');
+						} else {
+							$("#deviceSize").text('DeviceSize: ' + windowWidth + 'px - Large Devices (Desktops)');
+						}
+				});
+			});
+			
+			</script>
+  </body>
+</html>
