@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+<!--    <link rel="stylesheet" href="css/bootstrap.min.css" >-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+    <title>16. Modals</title>
+  </head>
+  <body>
+			
+			<div class="container-fluid">
+					<button type="button" class="btn btn-primary" data-target="#myInquiry" data-toggle="modal" data-ordernumber="1122">Order Number: 1122 - Contact Us</button>
+				
+					<div class="modal" id="myInquiry" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+									<div class="modal-content">
+									<div class="modal-header">
+											<button class="close" data-dismiss="modal">&times;</button>
+													<h4 id="myModalLabel">Thank you for contacting us: </h4>
+									</div>
+										<div class="modal-body">
+											<label for ="inquiry">Your Inquiry: </label>
+													<textarea class="form-control" row="5" id="inquiry"></textarea>
+									</div>
+										<div class="modal-footer">
+													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+													<button type="button" class="btn btn-primary" data-dismiss="modal">Send</button>
+									
+									</div>
+								</div>
+							</div>
+					</div>
+			</div>
+
+   <script>
+			$("#myInquiry").on('hide.bs.modal', function(){
+//				window.alert('Hi!');
+			});
+			$("#myInquiry").on('show.bs.modal', function(event){
+				var button=$(event.relatedTarget);
+				var orderNumber=button.data('ordernumber');
+//				window.alert(orderNumber);
+				$(this).find('#myModalLabel').text('Order number: ' + orderNumber);
+			})
+			</script>
+  </body>
+</html>
