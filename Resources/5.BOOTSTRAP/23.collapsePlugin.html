@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+<!--    <link rel="stylesheet" href="css/bootstrap.min.css" >-->
+<!--
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+-->
+			
+				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>23. Collapse Plugin</title>
+  </head>
+  <body>
+			
+			<div class="container-fluid">
+					<a href="#collapse01" class="btn btn-primary" data-toggle="collapse">Link</a>
+				
+				<button class="btn btn-primary" data-target="#collapse02" data-toggle="collapse">Button</button>
+					<div class="bg-danger collapse" id="collapse01">
+							<p>Collapsible Content 1</p>
+							<p>Collapsible Content 2</p>
+							<p>Collapsible Content 3</p>
+							<p>Collapsible Content 4</p>
+					</div>
+				
+				<div class="bg-warning collapse" id="collapse02">
+							<p>Collapsible Content 2</p>
+							<p>Collapsible Content 2</p>
+							<p>Collapsible Content 2</p>
+							<p>Collapsible Content 2</p>
+					</div>
+			</div>
+			
+			
+	<div id="accordian" class="panel-group">
+			<div class="panel panel-warning">
+					<div class="panel-heading">
+								<h4 class="panel-title">
+										<a href="#collapse1" data-toggle="collapse" data-parent="#accordian">Section 1</a>
+								</h4>
+					</div>
+				
+					<div class="panel-collapse collapse in" id="collapse1">
+							<div class="panel-body">
+							<p>Collapsible Content 1</p>
+							<p>Collapsible Content 2</p>
+							<p>Collapsible Content 3</p>
+							<p>Collapsible Content 4</p>
+							</div>
+					</div>
+		 </div>
+		
+		<div class="panel panel-success">
+					<div class="panel-heading">
+								<h4 class="panel-title">
+										<a href="#collapse2" data-toggle="collapse" data-parent="#accordian">Section 2</a>
+								</h4>
+					</div>
+				
+					<div class="panel-collapse collapse" id="collapse2">
+							<div class="panel-body">
+							<p>Collapsible Content 1</p>
+							<p>Collapsible Content 2</p>
+							<p>Collapsible Content 3</p>
+							<p>Collapsible Content 4</p>
+							</div>
+					</div>
+		 </div>
+		
+		<div class="panel panel-danger">
+					<div class="panel-heading">
+								<h4 class="panel-title">
+										<a href="#collapse3" data-toggle="collapse" data-parent="#accordian">Section 3</a>
+								</h4>
+					</div>
+				
+					<div class="panel-collapse collapse in" id="collapse3">
+							<div class="panel-body">
+							<p>Collapsible Content 1</p>
+							<p>Collapsible Content 2</p>
+							<p>Collapsible Content 3</p>
+							<p>Collapsible Content 4</p>
+							</div>
+					</div>
+		 </div>
+	</div>
+<script>
+			$(function(){
+				$('#collapse2').collapse('show');
+				$('#collapse3').collapse('toggle');
+				$('#collapse1').on('hidden.bs.collapse', function(){
+					window.alert('Section 1 hidden');
+				})
+			});
+</script> 
+  </body>
+</html>
