@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+<!--    <link rel="stylesheet" href="css/bootstrap.min.css" >-->
+<!--
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+-->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>19. Tooltips</title>
+  </head>
+  <body>
+			
+			<div class="container-fluid">
+					<div>
+							<p>Paragraph</p>
+							<p>This is a <a href="http://www.google.com" title="Google" data-toggle="tooltip" data-placement="right"> link</a> </p>
+							<button type="button"
+ class="btn btn-primary" data-toggle="tooltip" title="button tooltip">Button</button>
+				</div>
+			</div>
+<script>
+$('[data-toggle="tooltip"]').tooltip();
+//	To Access all the tooltips as the page loads
+	$('[data-toggle="tooltip"]').tooltip('show');
+//	Alert message when the tooltip is hidden
+	$('[data-toggle="tooltip"]').on('hidden.bs.tooltip', function(){
+		window.alert("Tooltip is hidden !!");
+	})
+</script>
+    
+  </body>
+</html>
