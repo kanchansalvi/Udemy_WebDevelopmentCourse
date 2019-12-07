@@ -1,0 +1,103 @@
+/* Get images from freenaturestock.com */
+.jumbotron{
+	background: url(https://freenaturestock.s3.us-east-1.amazonaws.com/166.jpg) center center;  
+/*	Centres the picture horizontally and vertically so that the whole image is visible irrespective of the size of the screen*/
+	background-size: cover;
+	height: 600px;
+}
+
+/* Setting size of the logo */
+.logo{
+	width: 50px;
+	height: 50px;
+}
+
+/*Set tet color of featured content */
+.featured{
+	color: white;
+}
+
+/*Create space between title and logo*/
+.featured h1{
+	padding-top: 60px;
+}
+
+/*Styling links*/
+.featured .btn-default{
+	font-weight: bold;
+	color: white;
+	background-color: rgba(145,82,58,0.5);
+	border-radius: 10px;
+	margin-top: 20px;
+	width: 160px;
+}
+
+.featured .btn-default:hover{
+	background-color: rgba(145,82,58);
+}
+
+/*Add styling for devices between 480px and 768px*/
+@media(min-width: 480px) and (max-width: 768px){
+	.jumbotron{
+		height: 410px;
+		margin: 0;
+	}
+	.logo{
+		width: 50px;
+		height: 50px;
+	}
+	.featured h1{
+		padding-top: 30px;
+	}
+	.featured p{
+		font-size: 17px;
+	}
+	.featured{
+		text-align: center;
+	}
+}
+/* Trial styling*/
+.trial{
+	text-align: centre;
+	padding: 20px 0 40px 0;
+	color: black;
+}
+
+/*set trial images*/
+.trial img{
+	width:200px;
+	height: 70px;
+	margin:20px;
+}
+
+/*Footer styling*/
+.footer{
+	background-color: #eee;
+	font-size: 15px;
+	padding: 10px 0;
+}
+/*Add styling for devices under 480px*/
+@media(max-width: 480px){
+	.jumbotron{
+		height: 210px;
+		margin: 0;
+	}
+	.logo{
+		width: 40px;
+		height: 40px;
+	}
+	.featured h1{
+		padding-top: 10px;
+	}
+	.featured p, featured a{
+		font-size: 13px;
+	}
+	.featured{
+		text-align: center;
+	}
+	.trial img{
+		width:100px;
+		height:35px;
+		margin:10px;
+	}
+}
