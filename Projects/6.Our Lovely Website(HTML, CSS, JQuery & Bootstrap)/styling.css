@@ -1,0 +1,81 @@
+/*Body:
+- Give body element a relatine position for the scrollspy to work
+-Add a font family to the whole page
+*/
+body{
+	font-family: 'Roboto', sans-serif;
+	position: relative;
+}
+
+/*Video:
+- Set the video as background, make it fixed 
+- make sure it appears behind all the elements (use z-index)
+- make sure it spreads across the whole webpage 
+*/
+video#bgImage{
+	position: fixed;
+	min-height: 100%;
+	min-width: 100%;
+	z-index: -100;
+}
+
+/*Video will not work in small devices :
+- Hide the viseo and set picture as the background
+- make sure it spreads the whole webpage
+*/
+
+/*Style the navigation bar using a navbar css generator*/
+/*Search Twitter bootstrap navbar generator and get the generated code link:http://twitterbootstrap3navbars.w3masters.nl
+Not working/ 
+*/
+/*I have written my own code here : */
+
+
+/*Home Section:
+Style the home section and elements inside it:
+- Reduce the margin-bottom of headings
+- Style the button and its hover state
+*/
+#home{
+	background: rgba(0, 0, 0, 0.2);
+ color: #f1f1f1;
+	text-align: center;
+	padding: 10%;
+	height: auto;
+}
+
+#home .btn{
+	background: #11cc;
+	border: #fff;
+	border-radius: 0.8;
+	color: white;
+}
+
+#home h1{
+	margin: 20px;
+	text-align: center;
+}
+
+#home h2{
+margin: 20px;
+}
+
+#home .btn:hover{
+	background: #33ff;
+}
+/*About Section:
+-add padding top so that the nav link is active before the carousal hits the top border of the page
+- Limit the width of big devices to 1000px
+- Make headings bold and set the dimensions of the picture
+*/
+
+/*Promise section:
+- add padding-top for the early activation of the nav link
+- Set the width of carousal and centre it
+- Set height of the picture and centre it inside the carosal
+-move the carousal caption under the pictures
+*/
+
+/*Style the pictures and nav-brand for different screens*/
+
+/*Style the footer*/
