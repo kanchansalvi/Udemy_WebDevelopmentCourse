@@ -23,6 +23,15 @@ video#bgImage{
 - Hide the viseo and set picture as the background
 - make sure it spreads the whole webpage
 */
+@media (max-width:768px){
+	body{
+		background: url(images/slide3.jpg);
+		background-size: cover;
+	}
+	#bgImage{
+		display: none;
+	}
+}
 
 /*Style the navigation bar using a navbar css generator*/
 /*Search Twitter bootstrap navbar generator and get the generated code link:http://twitterbootstrap3navbars.w3masters.nl
@@ -68,6 +77,28 @@ margin: 20px;
 - Limit the width of big devices to 1000px
 - Make headings bold and set the dimensions of the picture
 */
+#about{
+	color: white;
+	padding: 20px;
+	margin: 20px;
+	text-align: center;
+}
+
+#about h2{
+	font-weight: bold;
+}
+
+#about p{
+	font-size: 17px;
+}
+
+#about img{
+	height: 150px;
+}
+
+#about .container{
+	max-width: 1200px;
+}
 
 /*Promise section:
 - add padding-top for the early activation of the nav link
@@ -75,7 +106,60 @@ margin: 20px;
 - Set height of the picture and centre it inside the carosal
 -move the carousal caption under the pictures
 */
+#promise{
+	padding-top: 100px;
+}
+
+#myCarousel{
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.carousel-inner .item img{
+height: 250px;
+	margin: 0 auto;
+}
+
+.carousel-caption{
+	position: relative;
+	left: auto;
+	right: auto;
+	height: 100px;
+	margin-top: 5px;
+	font-size: 20px;
+	font-style: bold;
+}
 
 /*Style the pictures and nav-brand for different screens*/
+@media (max-width:768px){
+	.carousel-inner .item img{
+height: 200px;
+	}
+	.carousel-inner p{
+font-size: 23px;
+		}
+}
+
+@media (max-width:400px){
+	.carousel-inner .item img{
+height: 150px;
+	}
+	.carousel-inner p{
+font-size: 17px;
+		}
+	.navbar-brand{
+		font-size: 12px;
+	}
+}
+
+
 
 /*Style the footer*/
+.footer{
+	background-color: blueviolet;
+	color: #fff;
+	padding: 5px;
+	margin-top: 150px;
+	font-size: 10px;
+}
