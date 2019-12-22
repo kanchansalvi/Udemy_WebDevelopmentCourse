@@ -46,7 +46,7 @@ Style the home section and elements inside it:
 - Style the button and its hover state
 */
 #home{
-	background: rgba(0, 0, 0, 0.2);
+	background: rgba(0, 0, 0, 0.1);
  color: #f1f1f1;
 	text-align: center;
 	padding: 10%;
@@ -79,7 +79,7 @@ margin: 20px;
 */
 #about{
 	color: white;
-	padding: 20px;
+	padding: 50px;
 	margin: 20px;
 	text-align: center;
 }
@@ -133,7 +133,11 @@ height: 250px;
 
 /*Style the pictures and nav-brand for different screens*/
 @media (max-width:768px){
+	#myCarousel{
+		height: 350px;;
+	}
 	.carousel-inner .item img{
+		margin-top:20px;
 height: 200px;
 	}
 	.carousel-inner p{
